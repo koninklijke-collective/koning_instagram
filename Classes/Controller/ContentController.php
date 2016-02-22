@@ -1,6 +1,8 @@
 <?php
 namespace Keizer\KoningInstagram\Controller;
 
+use Keizer\KoningInstagram\Utility\ConfigurationUtility;
+
 /**
  * Frontend Controller: Content
  *
@@ -15,14 +17,14 @@ class ContentController extends AbstractActionController
      */
     public function showAction()
     {
-        if (!isset($this->settings['data']['credential'])) {
+        if (!isset($this->settings['data']['credential']) || ConfigurationUtility::isValid()) {
             $this->view->assign('invalidConfiguration', true);
         } else {
             $credential = $this->getCredentialRepository()->findByUid($this->settings['data']['credential']);
             if ($credential !== null) {
                 /** @var \Keizer\KoningInstagram\Domain\Model\Credential $credential */
                 try {
-                    $request = $this->getClient()->request('GET', $this->settings['instagram']['baseUrl'] . 'v1/tags/' . $this->settings['data']['tags'] . '/media/recent',
+                    $request = $this->getClient()->request('GET', $this->getInstagramSetting('baseUrl') . 'v1/tags/' . $this->settings['data']['tags'] . '/media/recent',
                         array(
                             'query' => array(
                                 'access_token' => $credential->getAccessToken(),

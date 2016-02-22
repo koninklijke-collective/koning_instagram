@@ -2,6 +2,7 @@
 namespace Keizer\KoningInstagram\Controller;
 
 use Keizer\KoningInstagram\Domain\Model\Credential;
+use Keizer\KoningInstagram\Utility\ConfigurationUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -13,6 +14,7 @@ class AuthController extends AbstractActionController
 {
     /**
      * Action: Handle authentication
+     *
      * @return void
      */
     public function handleAuthAction()
@@ -21,15 +23,15 @@ class AuthController extends AbstractActionController
         $errorMessage = null;
 
         $code = GeneralUtility::_GET('code');
-        if (empty($code)) {
+        if (empty($code) || ConfigurationUtility::isValid()) {
             $responseCode = 400;
         } else {
             try {
-                $request = $this->getClient()->request('POST', $this->settings['instagram']['baseUrl'] . 'oauth/access_token', array(
+                $request = $this->getClient()->request('POST', $this->getInstagramSetting('baseUrl') . 'oauth/access_token', array(
                     'form_params' => array(
-                        'client_id' => $this->settings['instagram']['clientId'],
-                        'client_secret' => $this->settings['instagram']['clientSecret'],
-                        'redirect_uri' => $this->settings['instagram']['redirectUri'],
+                        'client_id' => $this->getInstagramSetting('clientId'),
+                        'client_secret' => $this->getInstagramSetting('clientSecret'),
+                        'redirect_uri' => $this->getInstagramSetting('redirectUri'),
                         'grant_type' => 'authorization_code',
                         'code' => $code
                     )

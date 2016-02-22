@@ -1,6 +1,8 @@
 <?php
 namespace Keizer\KoningInstagram\Controller;
 
+use Keizer\KoningInstagram\Utility\ConfigurationUtility;
+
 /**
  * Abstract Action Controller: Default action functions, variables and checks
  *
@@ -8,6 +10,7 @@ namespace Keizer\KoningInstagram\Controller;
  */
 abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+
     /**
      * @var \GuzzleHttp\Client
      */
@@ -17,6 +20,11 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
      * @var \Keizer\KoningInstagram\Domain\Repository\CredentialRepository
      */
     protected $credentialRepository;
+
+    /**
+     * @var array
+     */
+    protected $instagramSettings;
 
     /**
      * Initialize actions
@@ -32,7 +40,8 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
         // circumvented until there is a better solution in extbase.
         // For now we throw an exception if no settings are detected.
         if (empty($this->settings)) {
-            throw new \RuntimeException('No settings detected. This module can not work then. This usually happens if there is no frontend TypoScript template with root flag set. ' . 'Please create a frontend page with a TypoScript root template.', 1344375003);
+            throw new \RuntimeException('No settings detected. This module can not work then. This usually happens if there is no frontend TypoScript template with root flag set. ' . 'Please create a frontend page with a TypoScript root template.',
+                1344375003);
         }
     }
 
@@ -68,5 +77,20 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
             $this->httpClient = $this->getObjectManager()->get('GuzzleHttp\\Client');
         }
         return $this->httpClient;
+    }
+
+    /**
+     * Get setting for instagram
+     *
+     * @param string $key
+     * @return string
+     */
+    protected function getInstagramSetting($key)
+    {
+        if ($this->instagramSettings === null) {
+            $this->instagramSettings = ConfigurationUtility::getInstagramSettings();
+        }
+
+        return (isset($this->instagramSettings[$key]) ? $this->instagramSettings[$key] : null);
     }
 }
