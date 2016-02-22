@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2016-02-20T19:30:32Z" product-name="koning_instagram">
+        <header/>
+        <body>
+            <trans-unit id="mlang_tabs_tab">
+                <source>Admin</source>
+            </trans-unit>
+            <trans-unit id="mlang_labels_tabdescr">
+                <source>Admin</source>
+            </trans-unit>
+            <trans-unit id="mlang_labels_tablabel">
+                <source>Admin</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

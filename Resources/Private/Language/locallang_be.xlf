@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2016-02-20T19:30:32Z" product-name="koning_instagram">
+        <header/>
+        <body>
+            <trans-unit id="plugin.show">
+                <source>Instagram content</source>
+            </trans-unit>
+
+            <trans-unit id="tx_koninginstagram_domain_model_credential.singular">
+                <source>Instagram API credential</source>
+            </trans-unit>
+            <trans-unit id="tx_koninginstagram_domain_model_credential.plural">
+                <source>Instagram API credentials</source>
+            </trans-unit>
+            <trans-unit id="tx_koninginstagram_domain_model_credential.user_id">
+                <source>User ID</source>
+            </trans-unit>
+            <trans-unit id="tx_koninginstagram_domain_model_credential.username">
+                <source>Username</source>
+            </trans-unit>
+            <trans-unit id="tx_koninginstagram_domain_model_credential.access_token">
+                <source>Access token</source>
+            </trans-unit>
+
+            <trans-unit id="configuration.show.credential">
+                <source>Credential</source>
+            </trans-unit>
+            <trans-unit id="configuration.show.credential.select">
+                <source>- Create and select the credential - </source>
+            </trans-unit>
+            <trans-unit id="configuration.show.tags">
+                <source>Tags</source>
+            </trans-unit>
+            <trans-unit id="configuration.show.limit">
+                <source>Limit</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

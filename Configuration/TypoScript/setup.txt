@@ -1,0 +1,48 @@
+module.tx_koninginstagram {
+    view {
+        templateRootPaths {
+            10 = EXT:koning_instagram/Resources/Private/Templates
+        }
+        partialRootPaths {
+            10 = EXT:koning_instagram/Resources/Private/Partials
+        }
+        layoutRootPaths {
+            10 = EXT:koning_instagram/Resources/Private/Layouts
+        }
+    }
+
+    settings {
+        // This is a dummy entry. It is used in AbstractActionController
+        // to test that some TypoScript configuration is set.
+        // This entry can be removed if extbase setup is made frontend TS independant
+        // or if there are other settings set.
+        dummy = foo
+    }
+}
+
+plugin.tx_koninginstagram.settings < module.tx_koninginstagram.settings
+
+KoningInstagramAuthorization = PAGE
+KoningInstagramAuthorization {
+    typeNum = 46782
+    10 = USER_INT
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        pluginName = Auth
+        vendorName = Keizer
+        extensionName = KoningInstagram
+        controller = Auth
+        switchableControllerActions {
+            Auth {
+                1 = handleAuth
+            }
+        }
+    }
+
+    config {
+        disableAllHeaderCode = 1
+        xhtml_cleaning = 0
+        no_cache = 1
+        debug = 0
+    }
+}
