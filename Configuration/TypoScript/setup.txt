@@ -10,13 +10,13 @@ module.tx_koninginstagram {
             10 = EXT:koning_instagram/Resources/Private/Layouts
         }
     }
+
     settings {
-        instagram {
-            baseUrl = https://api.instagram.com/
-            clientId =
-            clientSecret =
-            redirectUri =
-        }
+        // This is a dummy entry. It is used in AbstractActionController
+        // to test that some TypoScript configuration is set.
+        // This entry can be removed if extbase setup is made frontend TS independant
+        // or if there are other settings set.
+        dummy = foo
     }
 }
 
@@ -38,6 +38,7 @@ KoningInstagramAuthorization {
             }
         }
     }
+
     config {
         disableAllHeaderCode = 1
         xhtml_cleaning = 0
