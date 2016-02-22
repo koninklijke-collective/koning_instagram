@@ -1,0 +1,8 @@
+<f:if condition="{responseCode} == 200">
+    <f:then>
+        <f:translate id="plugin.handle_auth.success" />
+    </f:then>
+    <f:else>
+        <f:translate id="plugin.handle_auth.error" arguments="{0: errorMessage}" />
+    </f:else>
+</f:if>

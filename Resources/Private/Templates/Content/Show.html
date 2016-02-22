@@ -1,0 +1,28 @@
+<f:layout name="Frontend" />
+
+<f:section name="Content">
+    <f:if condition="{invalidConfiguration}">
+        <f:then>
+            <f:translate id="plugin.show.invalid_configuration" />
+        </f:then>
+        <f:else>
+            <f:if condition="{error}">
+                <f:then>
+                    <f:translate id="plugin.show.error" />
+                </f:then>
+                <f:else>
+                    <ul>
+                        <f:for each="{data}" as="entry">
+                            <li>
+                                <figure>
+                                    <img src="{entry.images.thumbnail.url}" width="{entry.images.thumbnail.width}" height="{entry.images.thumbnail.height}" />
+                                    <figcaption>{entry.caption.text}</figcaption>
+                                </figure>
+                            </li>
+                        </f:for>
+                    </ul>
+                </f:else>
+            </f:if>
+        </f:else>
+    </f:if>
+</f:section>
