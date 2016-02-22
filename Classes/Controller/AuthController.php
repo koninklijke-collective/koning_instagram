@@ -23,7 +23,7 @@ class AuthController extends AbstractActionController
         $errorMessage = null;
 
         $code = GeneralUtility::_GET('code');
-        if (empty($code) || ConfigurationUtility::isValid()) {
+        if (empty($code) || !ConfigurationUtility::isValid()) {
             $responseCode = 400;
         } else {
             try {
