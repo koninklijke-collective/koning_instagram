@@ -2,8 +2,9 @@
 if (!defined('TYPO3_MODE')) {
     die ('Access denied.');
 }
-$TCA['tx_koninginstagram_domain_model_credential'] = array(
-    'ctrl' => $TCA['tx_koninginstagram_domain_model_credential']['ctrl'],
+
+$GLOBALS['TCA']['tx_koninginstagram_domain_model_credential'] = array(
+    'ctrl' => $GLOBALS['TCA']['tx_koninginstagram_domain_model_credential']['ctrl'],
     'interface' => array(
         'showRecordFieldList' => 'user_id, username, access_token'
     ),

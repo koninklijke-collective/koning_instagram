@@ -1,0 +1,39 @@
+{
+    "name": "serfhos/koning-instagram",
+    "description": "TYPO3 Extension: Instagram integration",
+    "type": "typo3-cms-extension",
+
+    "keywords": [
+        "TYPO3",
+        "CMS",
+        "Koning",
+        "Instagram"
+    ],
+    "homepage": "https://github.com/GrandSlamMediaNL/koning_instagram",
+    "license": "LGPL-3.0+",
+
+    "autoload": {
+        "psr-4": {
+            "Keizer\\KoningInstagram\\": "Classes/"
+        }
+    },
+
+    "version": "1.0.0",
+
+    "authors": [
+        {
+            "name": "Jesper Paardekooper",
+            "email": "j.paardekooper@grandslam-media.nl",
+            "homepage": "http://grandslam-media.nl"
+        },
+        {
+            "name": "Benjamin Serfhos",
+            "email": "benjamin@serfhos.com",
+            "homepage": "http://serfhos.com"
+        }
+    ],
+
+    "require": {
+        "guzzlehttp/guzzle": "^6.1"
+    }
+}

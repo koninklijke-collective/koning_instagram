@@ -13,17 +13,17 @@ module.tx_koninginstagram {
     settings {
         instagram {
             baseUrl = https://api.instagram.com/
-            clientId = eadbfb0f568d487d9cf3936558924788
-            clientSecret = caea8b0a32aa4abfb25754c7e8a7a90a
-            redirectUri = http://ret.dev.local/?type=46782
+            clientId =
+            clientSecret =
+            redirectUri =
         }
     }
 }
 
-plugin.tx_koninginstagram.settings < module.tx_koninginstagram.settings
+plugin.tx_koninginstagram.settings =< module.tx_koninginstagram.settings
 
-InstagramAuthorization = PAGE
-InstagramAuthorization {
+KoningInstagramAuthorization = PAGE
+KoningInstagramAuthorization {
     typeNum = 46782
     10 = USER_INT
     10 {

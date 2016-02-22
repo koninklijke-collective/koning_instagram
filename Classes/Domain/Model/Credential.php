@@ -1,8 +1,14 @@
 <?php
 namespace Keizer\KoningInstagram\Domain\Model;
 
+/**
+ * Model: Credential
+ *
+ * @package Keizer\KoningInstagram\Domain\Model
+ */
 class Credential extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
+
     /**
      * @var string
      */

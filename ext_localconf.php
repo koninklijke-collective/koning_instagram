@@ -9,7 +9,9 @@ if (!defined('TYPO3_MODE')) {
     array(
         'Auth' => 'handleAuth'
     ),
-    array()
+    array(
+        'Auth' => 'handleAuth'
+    )
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(

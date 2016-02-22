@@ -1,15 +1,17 @@
 <?php
 namespace Keizer\KoningInstagram\Controller;
 
-class ContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+/**
+ * Frontend Controller: Content
+ *
+ * @package Keizer\KoningInstagram\Controller
+ */
+class ContentController extends AbstractActionController
 {
-    /**
-     * @inject
-     * @var \Keizer\KoningInstagram\Domain\Repository\CredentialRepository
-     */
-    protected $credentialRepository;
 
     /**
+     * Action: Show media with configured credentials
+     *
      * @return void
      */
     public function showAction()
@@ -17,20 +19,22 @@ class ContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         if (!isset($this->settings['data']['credential'])) {
             $this->view->assign('invalidConfiguration', true);
         } else {
-            $credential = $this->credentialRepository->findByUid($this->settings['data']['credential']);
+            $credential = $this->getCredentialRepository()->findByUid($this->settings['data']['credential']);
             if ($credential !== null) {
                 /** @var \Keizer\KoningInstagram\Domain\Model\Credential $credential */
-                $client = new \GuzzleHttp\Client();
                 try {
-                    $request = $client->request('GET', $this->settings['instagram']['baseUrl'] . 'v1/tags/' . $this->settings['data']['tags']. '/media/recent', array(
-                        'query' => array(
-                            'access_token' => $credential->getAccessToken(),
-                            'count' => $this->settings['data']['limit']
-                        )
-                    ));
+                    $request = $this->getClient()->request('GET', $this->settings['instagram']['baseUrl'] . 'v1/tags/' . $this->settings['data']['tags'] . '/media/recent',
+                        array(
+                            'query' => array(
+                                'access_token' => $credential->getAccessToken(),
+                                'count' => $this->settings['data']['limit']
+                            )
+                        ));
                     $response = json_decode($request->getBody(), true);
 
-                    $this->view->assign('data', $response['data']);
+                    if (is_array($response) && isset($response['data'])) {
+                        $this->view->assign('data', $response['data']);
+                    }
                 } catch (\GuzzleHttp\Exception\ClientException $e) {
                     $this->view->assign('error', true);
                 }

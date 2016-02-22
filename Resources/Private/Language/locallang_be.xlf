@@ -23,13 +23,16 @@
                 <source>Access token</source>
             </trans-unit>
 
-            <trans-unit id="flexform.show.credential">
+            <trans-unit id="configuration.show.credential">
                 <source>Credential</source>
             </trans-unit>
-            <trans-unit id="flexform.show.tags">
+            <trans-unit id="configuration.show.credential.select">
+                <source>- Create and select the credential - </source>
+            </trans-unit>
+            <trans-unit id="configuration.show.tags">
                 <source>Tags</source>
             </trans-unit>
-            <trans-unit id="flexform.show.limit">
+            <trans-unit id="configuration.show.limit">
                 <source>Limit</source>
             </trans-unit>
         </body>

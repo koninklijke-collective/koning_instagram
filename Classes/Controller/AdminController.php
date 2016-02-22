@@ -5,20 +5,22 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
-class AdminController extends \TYPO3\CMS\Beuser\Controller\BackendUserController
+/**
+ * Backend Module Controller: Admin interface
+ *
+ * @package Keizer\KoningInstagram\Controller
+ */
+class AdminController extends AbstractActionController
 {
-    /**
-     * @var \Keizer\KoningInstagram\Service\InstagramApiService
-     * @inject
-     */
-    protected $instagramApiService;
 
     /**
      * @var string
      */
-    protected $finalUrl;
+    protected $url;
 
     /**
+     * Action: Display default action overview
+     *
      * @return void
      */
     public function indexAction()
@@ -26,6 +28,8 @@ class AdminController extends \TYPO3\CMS\Beuser\Controller\BackendUserController
     }
 
     /**
+     * Action: Authorize incoming parameters client
+     *
      * @return void
      */
     public function authorizeAction()
@@ -33,26 +37,24 @@ class AdminController extends \TYPO3\CMS\Beuser\Controller\BackendUserController
         $error = false;
 
         $url = $this->settings['instagram']['baseUrl'] . 'oauth/authorize/?client_id=' . $this->settings['instagram']['clientId'] . '&redirect_uri=' . $this->settings['instagram']['redirectUri'] . '&response_type=code&scope=public_content';
-        $client = new \GuzzleHttp\Client();
-
         try {
-            $client->request('GET', $url, array(
+            $this->getClient()->request('GET', $url, array(
                 'allow_redirects' => array(
-                    'on_redirect' => function(
+                    'on_redirect' => function (
                         RequestInterface $request,
                         ResponseInterface $response,
                         UriInterface $uri
                     ) {
-                        $this->finalUrl = $uri;
+                        $this->url = $uri;
                     }
                 )
             ));
-        } catch (\GuzzleHttp\Exception\ClientException $e) {
+        } catch (\Exception $e) {
             $error = true;
         }
 
         $this->view->assignMultiple(array(
-            'url' => $this->finalUrl,
+            'url' => $this->url,
             'error' => $error
         ));
     }
