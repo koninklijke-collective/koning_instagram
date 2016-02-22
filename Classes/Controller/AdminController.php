@@ -12,7 +12,6 @@ use Psr\Http\Message\UriInterface;
  */
 class AdminController extends AbstractActionController
 {
-
     /**
      * @var string
      */

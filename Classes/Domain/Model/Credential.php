@@ -8,7 +8,6 @@ namespace Keizer\KoningInstagram\Domain\Model;
  */
 class Credential extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
     /**
      * @var string
      */

@@ -8,7 +8,6 @@ namespace Keizer\KoningInstagram\Controller;
  */
 class ContentController extends AbstractActionController
 {
-
     /**
      * Action: Show media with configured credentials
      *

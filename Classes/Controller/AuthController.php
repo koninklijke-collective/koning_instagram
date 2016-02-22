@@ -11,7 +11,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class AuthController extends AbstractActionController
 {
-
     /**
      * Action: Handle authentication
      * @return void
@@ -38,7 +37,7 @@ class AuthController extends AbstractActionController
 
                 $response = json_decode($request->getBody(), true);
                 if (is_array($response) && isset($response['user']['id'])) {
-                    $credential = $this->getCredentialRepository()->findByUserId($response['user']['id']);
+                    $credential = $this->getCredentialRepository()->findOneByUserId($response['user']['id']);
                     if ($credential === null) {
                         $credential = new Credential();
                         $credential->setUserId($response['user']['id']);
