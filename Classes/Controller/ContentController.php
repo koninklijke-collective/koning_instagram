@@ -17,7 +17,7 @@ class ContentController extends AbstractActionController
      */
     public function showAction()
     {
-        if (!isset($this->settings['data']['credential']) || ConfigurationUtility::isValid()) {
+        if (!isset($this->settings['data']['credential']) || !ConfigurationUtility::isValid()) {
             $this->view->assign('invalidConfiguration', true);
         } else {
             $credential = $this->getCredentialRepository()->findByUid($this->settings['data']['credential']);
