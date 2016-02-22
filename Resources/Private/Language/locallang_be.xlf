@@ -27,7 +27,7 @@
                 <source>Credential</source>
             </trans-unit>
             <trans-unit id="flexform.show.tags">
-                <source>Tags (comma separated)</source>
+                <source>Tags</source>
             </trans-unit>
             <trans-unit id="flexform.show.limit">
                 <source>Limit</source>
