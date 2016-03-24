@@ -34,7 +34,7 @@ return array(
     'columns' => array(
         'user_id' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xml:tx_koninginstagram_domain_model_credential.user_id',
+            'label' => 'LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xlf:tx_koninginstagram_domain_model_credential.user_id',
             'config' => array(
                 'readOnly' => true,
                 'type' => 'input',
@@ -43,7 +43,7 @@ return array(
         ),
         'username' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xml:tx_koninginstagram_domain_model_credential.username',
+            'label' => 'LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xlf:tx_koninginstagram_domain_model_credential.username',
             'config' => array(
                 'readOnly' => true,
                 'type' => 'input',
@@ -52,7 +52,7 @@ return array(
         ),
         'access_token' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xml:tx_koninginstagram_domain_model_credential.access_token',
+            'label' => 'LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xlf:tx_koninginstagram_domain_model_credential.access_token',
             'config' => array(
                 'readOnly' => true,
                 'type' => 'input',
