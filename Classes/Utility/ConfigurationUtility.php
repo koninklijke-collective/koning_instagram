@@ -49,4 +49,5 @@ class ConfigurationUtility
         }
         return $configuration;
     }
+
 }

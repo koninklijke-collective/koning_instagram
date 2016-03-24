@@ -10,6 +10,7 @@ use Keizer\KoningInstagram\Utility\ConfigurationUtility;
  */
 class ContentController extends AbstractActionController
 {
+
     /**
      * Action: Show media with configured credentials
      *
@@ -44,4 +45,6 @@ class ContentController extends AbstractActionController
             }
         }
     }
+    
 }
+

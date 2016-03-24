@@ -46,14 +46,6 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
-     */
-    protected function getObjectManager()
-    {
-        return $this->objectManager;
-    }
-
-    /**
      * @return \Keizer\KoningInstagram\Domain\Repository\CredentialRepository
      */
     protected function getCredentialRepository()
@@ -80,6 +72,14 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
     }
 
     /**
+     * @return \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
+     */
+    protected function getObjectManager()
+    {
+        return $this->objectManager;
+    }
+
+    /**
      * Get setting for instagram
      *
      * @param string $key
@@ -93,4 +93,5 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
 
         return (isset($this->instagramSettings[$key]) ? $this->instagramSettings[$key] : null);
     }
+    
 }

@@ -13,6 +13,7 @@ use Psr\Http\Message\UriInterface;
  */
 class AdminController extends AbstractActionController
 {
+
     /**
      * @var string
      */
@@ -61,4 +62,5 @@ class AdminController extends AbstractActionController
             'error' => $error
         ));
     }
+    
 }
