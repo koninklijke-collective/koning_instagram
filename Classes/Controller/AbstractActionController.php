@@ -63,10 +63,7 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
     protected function getClient()
     {
         if (!class_exists('\GuzzleHttp\Client')) {
-            require PATH_site . '../vendor/autoload.php';
-            if (!class_exists('\GuzzleHttp\Client')) {
-                throw new \Exception('GuzzleHttp Client not included, please run composer with "guzzlehttp/guzzle": requirement. "composer require guzzlehttp/guzzle"');
-            }
+            throw new \Exception('GuzzleHttp Client not included, please run composer with "guzzlehttp/guzzle": requirement. "composer require guzzlehttp/guzzle"');
         }
         if ($this->httpClient === null) {
             $this->httpClient = $this->getObjectManager()->get('GuzzleHttp\\Client');
