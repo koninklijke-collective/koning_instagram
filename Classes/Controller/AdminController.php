@@ -62,5 +62,5 @@ class AdminController extends AbstractActionController
             'error' => $error
         ));
     }
-    
+
 }

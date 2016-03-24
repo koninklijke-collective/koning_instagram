@@ -70,5 +70,5 @@ class AuthController extends AbstractActionController
             'errorMessage' => $errorMessage
         ));
     }
-    
+
 }
