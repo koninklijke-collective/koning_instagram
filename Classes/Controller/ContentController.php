@@ -10,7 +10,6 @@ use Keizer\KoningInstagram\Utility\ConfigurationUtility;
  */
 class ContentController extends AbstractActionController
 {
-
     /**
      * Action: Show media with configured credentials
      *
@@ -25,7 +24,8 @@ class ContentController extends AbstractActionController
             if ($credential !== null) {
                 /** @var \Keizer\KoningInstagram\Domain\Model\Credential $credential */
                 try {
-                    $request = $this->getClient()->request('GET', $this->getInstagramSetting('baseUrl') . 'v1/tags/' . $this->settings['data']['tags'] . '/media/recent',
+                    $request = $this->getClient()->request('GET',
+                        $this->getInstagramSetting('baseUrl') . 'v1/tags/' . $this->settings['data']['tags'] . '/media/recent',
                         array(
                             'query' => array(
                                 'access_token' => $credential->getAccessToken(),
@@ -45,6 +45,4 @@ class ContentController extends AbstractActionController
             }
         }
     }
-    
 }
-

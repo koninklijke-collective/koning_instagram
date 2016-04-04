@@ -8,7 +8,6 @@ namespace Keizer\KoningInstagram\Utility;
  */
 class ConfigurationUtility
 {
-
     /**
      * Check if Instagram configuration is rightly configured
      *
@@ -49,5 +48,4 @@ class ConfigurationUtility
         }
         return $configuration;
     }
-
 }

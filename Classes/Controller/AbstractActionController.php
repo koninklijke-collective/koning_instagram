@@ -10,7 +10,6 @@ use Keizer\KoningInstagram\Utility\ConfigurationUtility;
  */
 abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
      * @var \GuzzleHttp\Client
      */
@@ -113,5 +112,4 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
         }
         return ($label) ? $label : $key;
     }
-
 }

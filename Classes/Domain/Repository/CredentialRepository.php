@@ -8,7 +8,6 @@ namespace Keizer\KoningInstagram\Domain\Repository;
  */
 class CredentialRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-
     /**
      * Add and persist database for uid generation
      *
@@ -20,5 +19,4 @@ class CredentialRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $this->add($credential);
         $this->persistenceManager->persistAll();
     }
-
 }
