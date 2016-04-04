@@ -22,16 +22,16 @@ The TYPO3 setup process consists of the following steps:
 - Install guzzle using composer (``composer require guzzlehttp/guzzle``) or include it manually
 - Configure the extension in the Extension Manager
 
-** Extension Manager setup **
+**Extension Manager setup**
 
 - ``instagram.baseUrl``: should be ``https://api.instagram.com/``
 - ``instagram.clientId``: retrieve the client id from the Instagram client at [https://www.instagram.com/developer/clients/manage/](https://www.instagram.com/developer/clients/manage/)
 - ``instagram.clientSecret``: retrieve the client secret from the Instagram client at [https://www.instagram.com/developer/clients/manage/](https://www.instagram.com/developer/clients/manage/)
-- ``instagram.redirectUri``: the redirect uri needs to be the same as in the Instagram client and should end with ``?type=type=46782```
+- ``instagram.redirectUri``: the redirect uri needs to be the same as in the Instagram client and should end with ``?type=46782```
 
 **Credential**
 
-After setting everything up, it's time to add a credential. Use the Instagram / Admin backend module to do so. When successfull, a ``Credential`` record will be added on page=0. On failure, check the error message and review the setup steps.
+After setting everything up, it's time to add a credential. Use the Instagram / Admin backend module to do so. When successfull, a ``Credential`` record will be added on page 0. On failure, check the error message and review the setup steps.
 
 # Frontend
 
