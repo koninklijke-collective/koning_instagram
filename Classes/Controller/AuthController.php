@@ -12,6 +12,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class AuthController extends AbstractActionController
 {
+
     /**
      * Action: Handle authentication
      *
@@ -45,7 +46,7 @@ class AuthController extends AbstractActionController
                         $credential->setUserId($response['user']['id']);
                         $credential->setUsername($response['user']['username']);
                         $credential->setAccessToken($response['access_token']);
-                        $this->getCredentialRepository()->add($credential);
+                        $this->getCredentialRepository()->addAndPersist($credential);
                     } else {
                         /** @var Credential $credential */
                         $credential->setUsername($response['user']['username']);

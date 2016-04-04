@@ -27,7 +27,7 @@
                 <source>Credential</source>
             </trans-unit>
             <trans-unit id="configuration.show.credential.select">
-                <source>- Create and select the credential - </source>
+                <source>- Create and select the credential -</source>
             </trans-unit>
             <trans-unit id="configuration.show.tags">
                 <source>Tags</source>

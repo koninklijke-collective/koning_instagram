@@ -12,7 +12,8 @@ if (\Keizer\KoningInstagram\Utility\ConfigurationUtility::isValid()) {
         ),
         array(
             'Auth' => 'handleAuth'
-        )
+        ),
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_PLUGIN
     );
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
@@ -23,6 +24,7 @@ if (\Keizer\KoningInstagram\Utility\ConfigurationUtility::isValid()) {
         ),
         array(
             'Content' => 'show'
-        )
+        ),
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_PLUGIN
     );
 }

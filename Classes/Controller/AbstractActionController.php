@@ -10,7 +10,6 @@ use Keizer\KoningInstagram\Utility\ConfigurationUtility;
  */
 abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
      * @var \GuzzleHttp\Client
      */
@@ -46,14 +45,6 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
-     */
-    protected function getObjectManager()
-    {
-        return $this->objectManager;
-    }
-
-    /**
      * @return \Keizer\KoningInstagram\Domain\Repository\CredentialRepository
      */
     protected function getCredentialRepository()
@@ -71,12 +62,20 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
     protected function getClient()
     {
         if (!class_exists('\GuzzleHttp\Client')) {
-            throw new \Exception('GuzzleHttp Client not included, please run composer with "guzzlehttp/guzzle": "^6.1" requirement.');
+            throw new \Exception('GuzzleHttp Client not included, please run composer with "guzzlehttp/guzzle": requirement. "composer require guzzlehttp/guzzle"');
         }
         if ($this->httpClient === null) {
             $this->httpClient = $this->getObjectManager()->get('GuzzleHttp\\Client');
         }
         return $this->httpClient;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
+     */
+    protected function getObjectManager()
+    {
+        return $this->objectManager;
     }
 
     /**
@@ -92,5 +91,25 @@ abstract class AbstractActionController extends \TYPO3\CMS\Extbase\Mvc\Controlle
         }
 
         return (isset($this->instagramSettings[$key]) ? $this->instagramSettings[$key] : null);
+    }
+
+    /**
+     * Translate label for module
+     *
+     * @param string $key
+     * @param array $arguments
+     * @return string
+     */
+    protected function translate($key, $arguments = array())
+    {
+        $label = null;
+        if (!empty($key)) {
+            $label = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate(
+                $key,
+                'koning_instagram',
+                $arguments
+            );
+        }
+        return ($label) ? $label : $key;
     }
 }
