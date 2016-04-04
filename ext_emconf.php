@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'Instagram integration',
-    'description' => 'Offers instagram integration for TYPO3',
+    'description' => 'Offers Instagram integration for TYPO3',
     'category' => 'plugin',
     'version' => '1.0.0',
     'state' => 'stable',
