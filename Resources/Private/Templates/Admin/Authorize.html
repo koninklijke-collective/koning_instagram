@@ -13,7 +13,7 @@
 <f:section name="Content">
     <f:if condition="{error}">
         <f:then>
-            <f:translate key="error">An error has occured contacting the Instagram API.</f:translate>
+            <f:translate key="error">An error has occured contacting the Instagram API. The error message is: {errorMessage}</f:translate>
         </f:then>
         <f:else>
             <f:translate key="popup">Please wait for the popup to appear to allow TYPO3 access to your instagram account. Make sure popups are not being blocked.</f:translate>

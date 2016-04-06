@@ -35,6 +35,7 @@ class AdminController extends AbstractActionController
     public function authorizeAction()
     {
         $error = true;
+        $errorMessage = null;
         if (ConfigurationUtility::isValid()) {
             $error = false;
 
@@ -53,12 +54,14 @@ class AdminController extends AbstractActionController
                 ));
             } catch (\Exception $e) {
                 $error = true;
+                $errorMessage = $e->getMessage();
             }
         }
 
         $this->view->assignMultiple(array(
             'url' => $this->url,
-            'error' => $error
+            'error' => $error,
+            'errorMessage' => $errorMessage
         ));
     }
 }
