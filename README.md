@@ -12,7 +12,7 @@ This extension provides functionality to view Instagram images on your website. 
 The Instagram client setup process consists of the following steps:
 
 - Register for Instagram at [https://www.instagram.com/developer/register/](https://www.instagram.com/developer/register/) if you haven't already
-- Add a new client at [https://www.instagram.com/developer/clients/register/](https://www.instagram.com/developer/clients/register/). The redirect URI's fields must contain: ```https://www.yourwebsite.com/?type=type=46782``
+- Add a new client at [https://www.instagram.com/developer/clients/register/](https://www.instagram.com/developer/clients/register/). The redirect URI's fields must contain: ``https://www.yourwebsite.com/?type=type=46782``
 
 # TYPO3 setup
 
@@ -27,7 +27,7 @@ The TYPO3 setup process consists of the following steps:
 - ``instagram.baseUrl``: should be ``https://api.instagram.com/``
 - ``instagram.clientId``: retrieve the client id from the Instagram client at [https://www.instagram.com/developer/clients/manage/](https://www.instagram.com/developer/clients/manage/)
 - ``instagram.clientSecret``: retrieve the client secret from the Instagram client at [https://www.instagram.com/developer/clients/manage/](https://www.instagram.com/developer/clients/manage/)
-- ``instagram.redirectUri``: the redirect uri needs to be the same as in the Instagram client and should end with ``?type=46782```
+- ``instagram.redirectUri``: the redirect uri needs to be the same as in the Instagram client and should end with ``?type=46782``
 
 **Credential**
 
@@ -46,7 +46,6 @@ You can override the template by using standard TypoScript:
             templateRootPaths {
                 5 = EXT:your_extension/Resources/Private/Templates
                 10 = EXT:koning_instagram/Resources/Private/Templates
-
             }
             partialRootPaths {
                 5 = EXT:your_extension/Resources/Private/Partials
