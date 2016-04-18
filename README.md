@@ -32,7 +32,7 @@ The TYPO3 setup process consists of the following steps:
 
 **Composer autoload**
 
-- Make sure composer can autoload. For example, place this code in typo3conf/AdditionalConfiguration.php:
+Make sure composer can autoload. For example, place this code in ``typo3conf/AdditionalConfiguration.php``:
 
     // Load the autoload for composer
     if (file_exists(PATH_site . 'vendor/autoload.php')) {
