@@ -13,7 +13,7 @@ This extension provides functionality to view Instagram media on your website. I
 The Instagram client setup process consists of the following steps:
 
 - Register for Instagram at [https://www.instagram.com/developer/register/](https://www.instagram.com/developer/register/) if you haven't already
-- Add a new client at [https://www.instagram.com/developer/clients/register/](https://www.instagram.com/developer/clients/register/). The redirect URI's fields must contain: ``https://www.yourwebsite.com/?type=type=46782``
+- Add a new client at [https://www.instagram.com/developer/clients/register/](https://www.instagram.com/developer/clients/register/). The redirect URI's fields must contain: ``https://www.yourwebsite.com/?type=46782``
 
 # TYPO3 setup
 
