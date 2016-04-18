@@ -4,7 +4,10 @@
         <header/>
         <body>
             <trans-unit id="plugin.show">
-                <source>Instagram content</source>
+                <source>Instagram - Content by tag</source>
+            </trans-unit>
+            <trans-unit id="plugin.user">
+                <source>Instagram - Content by user</source>
             </trans-unit>
 
             <trans-unit id="tx_koninginstagram_domain_model_credential.singular">
@@ -23,17 +26,18 @@
                 <source>Access token</source>
             </trans-unit>
 
-            <trans-unit id="configuration.show.credential">
+            <trans-unit id="configuration.credential">
                 <source>Credential</source>
             </trans-unit>
-            <trans-unit id="configuration.show.credential.select">
+            <trans-unit id="configuration.credential.select">
                 <source>- Create and select the credential -</source>
             </trans-unit>
+            <trans-unit id="configuration.limit">
+                <source>Limit</source>
+            </trans-unit>
+
             <trans-unit id="configuration.show.tags">
                 <source>Tags</source>
-            </trans-unit>
-            <trans-unit id="configuration.show.limit">
-                <source>Limit</source>
             </trans-unit>
         </body>
     </file>
