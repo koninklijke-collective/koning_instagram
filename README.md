@@ -1,10 +1,11 @@
-# Documentation
+# koning_instagram
 
-This extension provides functionality to view Instagram images on your website. It features:
+This extension provides functionality to view Instagram media on your website. It features:
 
 - A backend module to handle authorization
 - Storing multiple credentials
-- Listing Instagram images filtered by tag
+- Listing Instagram media filtered by tag
+- Listing Instagram media from a user
 - Easily override the template
 
 # Instagram client setup
@@ -12,7 +13,7 @@ This extension provides functionality to view Instagram images on your website. 
 The Instagram client setup process consists of the following steps:
 
 - Register for Instagram at [https://www.instagram.com/developer/register/](https://www.instagram.com/developer/register/) if you haven't already
-- Add a new client at [https://www.instagram.com/developer/clients/register/](https://www.instagram.com/developer/clients/register/). The redirect URI's fields must contain: ``https://www.yourwebsite.com/?type=type=46782``
+- Add a new client at [https://www.instagram.com/developer/clients/register/](https://www.instagram.com/developer/clients/register/). The redirect URI's fields must contain: ``https://www.yourwebsite.com/?type=46782``
 
 # TYPO3 setup
 
@@ -29,19 +30,28 @@ The TYPO3 setup process consists of the following steps:
 - ``instagram.clientSecret``: retrieve the client secret from the Instagram client at [https://www.instagram.com/developer/clients/manage/](https://www.instagram.com/developer/clients/manage/)
 - ``instagram.redirectUri``: the redirect uri needs to be the same as in the Instagram client and should end with ``?type=46782``
 
+**Composer autoload**
+
+Make sure composer can autoload. For example, place this code in ``typo3conf/AdditionalConfiguration.php``:
+
+    // Load the autoload for composer
+    if (file_exists(PATH_site . 'vendor/autoload.php')) {
+       require_once(PATH_site . 'vendor/autoload.php');
+    }
+
 **Credential**
 
 After setting everything up, it's time to add a credential. Use the Instagram / Admin backend module to do so. When successfull, a ``Credential`` record will be added on page 0. On failure, check the error message and review the setup steps.
 
 # Frontend
 
-Add the ``Instagram content`` plugin and select your credential. Add a tag you want to filter images on (mandatory) and specify a limit.
+Add a ``Instagram`` plugin and select your credential. You can show content by tag or by user.
 
 **Override the template**
 
 You can override the template by using standard TypoScript:
 
-    module.tx_koninginstagram {
+    plugin.tx_koninginstagram {
         view {
             templateRootPaths {
                 5 = EXT:your_extension/Resources/Private/Templates

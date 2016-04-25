@@ -3,10 +3,10 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2016-02-20T19:30:32Z" product-name="koning_instagram">
         <header/>
         <body>
-            <trans-unit id="plugin.show.invalid_configuration">
+            <trans-unit id="plugin.invalid_configuration">
                 <source>No Instagram credentials found. Check plugin element for configuration.</source>
             </trans-unit>
-            <trans-unit id="plugin.show.error">
+            <trans-unit id="plugin.error">
                 <source>An error has occured retrieving data from Instagram</source>
             </trans-unit>
 
