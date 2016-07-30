@@ -2,6 +2,9 @@
 namespace Keizer\KoningInstagram\Controller;
 
 use Keizer\KoningInstagram\Utility\ConfigurationUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+include 'phar://' . ExtensionManagementUtility::extPath('koning_instagram') . 'Libraries/guzzlehttp-guzzle.phar/vendor/autoload.php';
 
 /**
  * Abstract Action Controller: Default action functions, variables and checks

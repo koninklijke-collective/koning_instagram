@@ -7,7 +7,7 @@
         <el>
             <settings.data.credential>
                 <TCEforms>
-                    <label>LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xlf:configuration.show.credential</label>
+                    <label>LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xlf:configuration.credential</label>
                     <config>
                         <type>select</type>
                         <foreign_table>tx_koninginstagram_domain_model_credential</foreign_table>
@@ -15,7 +15,7 @@
                         <eval>required</eval>
                         <items>
                             <numIndex index="1">
-                                <numIndex index="0">LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xlf:configuration.show.credential.select</numIndex>
+                                <numIndex index="0">LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xlf:configuration.credential.select</numIndex>
                                 <numIndex index="1"></numIndex>
                             </numIndex>
                         </items>
@@ -33,7 +33,7 @@
             </settings.data.tags>
             <settings.data.limit>
                 <TCEforms>
-                    <label>LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xlf:configuration.show.limit</label>
+                    <label>LLL:EXT:koning_instagram/Resources/Private/Language/locallang_be.xlf:configuration.limit</label>
                     <config>
                         <type>input</type>
                         <eval>required,int</eval>

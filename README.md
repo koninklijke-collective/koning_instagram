@@ -20,7 +20,6 @@ The Instagram client setup process consists of the following steps:
 The TYPO3 setup process consists of the following steps:
 
 - Install the extension
-- Install guzzle using composer (``composer require guzzlehttp/guzzle``) or include it manually
 - Configure the extension in the Extension Manager
 
 **Extension Manager setup**
@@ -32,11 +31,11 @@ The TYPO3 setup process consists of the following steps:
 
 **Credential**
 
-After setting everything up, it's time to add a credential. Use the Instagram / Admin backend module to do so. When successfull, a ``Credential`` record will be added on page 0. On failure, check the error message and review the setup steps.
+After setting everything up, it's time to add a credential. Use the Instagram / Admin backend module to do so. When successful, a ``Credential`` record will be added on page 0. On failure, check the error message and review the setup steps.
 
 # Frontend
 
-Add a ``Instagram`` plugin and select your credential. You can show content by tag or by user.
+Add a ``Instagram`` plugin and select your credential. You can show content by tag (don't include the # sign) or by user.
 
 **Override the template**
 
@@ -45,16 +44,16 @@ You can override the template by using standard TypoScript:
     plugin.tx_koninginstagram {
         view {
             templateRootPaths {
-                5 = EXT:your_extension/Resources/Private/Templates
                 10 = EXT:koning_instagram/Resources/Private/Templates
+                15 = EXT:your_extension/Resources/Private/Templates
             }
             partialRootPaths {
-                5 = EXT:your_extension/Resources/Private/Partials
                 10 = EXT:koning_instagram/Resources/Private/Partials
+                15 = EXT:your_extension/Resources/Private/Partials
             }
             layoutRootPaths {
-                5 = EXT:your_extension/Resources/Private/Layouts
                 10 = EXT:koning_instagram/Resources/Private/Layouts
+                15 = EXT:your_extension/Resources/Private/Layouts
             }
         }
     }

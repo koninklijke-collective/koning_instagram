@@ -37,7 +37,7 @@
             </trans-unit>
 
             <trans-unit id="configuration.show.tags">
-                <source>Tags</source>
+                <source>Tags (without the #)</source>
             </trans-unit>
         </body>
     </file>
