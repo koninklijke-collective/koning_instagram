@@ -35,7 +35,10 @@ class ContentController extends AbstractActionController
                     $response = json_decode($request->getBody(), true);
 
                     if (is_array($response) && isset($response['data'])) {
-                        $this->view->assign('data', $response['data']);
+                        $this->view->assignMultiple([
+                            'data' => $response['data'],
+                            'contentObject' => $this->configurationManager->getContentObject()->data
+                        ]);
                     }
                 } catch (\GuzzleHttp\Exception\ClientException $e) {
                     $this->view->assign('error', true);
@@ -71,7 +74,10 @@ class ContentController extends AbstractActionController
                     $response = json_decode($request->getBody(), true);
 
                     if (is_array($response) && isset($response['data'])) {
-                        $this->view->assign('data', $response['data']);
+                        $this->view->assignMultiple([
+                            'data' => $response['data'],
+                            'contentObject' => $this->configurationManager->getContentObject()->data
+                        ]);
                     }
                 } catch (\GuzzleHttp\Exception\ClientException $e) {
                     $this->view->assign('error', true);
