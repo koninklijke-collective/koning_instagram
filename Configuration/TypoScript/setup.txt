@@ -20,7 +20,7 @@ module.tx_koninginstagram {
     }
 }
 
-plugin.tx_koninginstagram.settings < module.tx_koninginstagram.settings
+plugin.tx_koninginstagram < module.tx_koninginstagram
 
 KoningInstagramAuthorization = PAGE
 KoningInstagramAuthorization {
