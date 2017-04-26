@@ -3,18 +3,8 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2016-02-20T19:30:32Z" product-name="koning_instagram">
         <header/>
         <body>
-            <trans-unit id="plugin.invalid_configuration">
-                <source>No Instagram credentials found. Check plugin element for configuration.</source>
-            </trans-unit>
-            <trans-unit id="plugin.error">
-                <source>An error has occured retrieving data from Instagram</source>
-            </trans-unit>
-
-            <trans-unit id="plugin.handle_auth.success">
-                <source>TYPO3 has successfully linked your Instagram account. You can now close this window.</source>
-            </trans-unit>
-            <trans-unit id="plugin.handle_auth.error">
-                <source>There was an error linking your Instagram account to TYPO3. The error message is: %s</source>
+            <trans-unit id="post_not_found">
+                <source>Instagram post not found</source>
             </trans-unit>
         </body>
     </file>

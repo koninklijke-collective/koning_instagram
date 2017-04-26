@@ -1,24 +1,24 @@
 <?php
-$EM_CONF[$_EXTKEY] = array(
-    'title' => 'Instagram integration',
-    'description' => 'Offers Instagram integration for TYPO3',
+$EM_CONF[$_EXTKEY] = [
+    'title' => 'Embed Instagram posts',
+    'description' => 'Embed Instagram posts in TYPO3',
     'category' => 'plugin',
-    'version' => '1.3.1',
+    'version' => '2.0.0',
     'state' => 'stable',
     'clearCacheOnLoad' => true,
     'author' => 'Jesper Paardekooper',
-    'author_email' => 'j.paardekooper@grandslam-media.nl',
-    'author_company' => 'GrandSlam Media',
-    'constraints' => array(
-        'depends' => array(
+    'author_email' => 'j.paardekooper@develement.nl',
+    'author_company' => 'DevElement',
+    'constraints' => [
+        'depends' => [
             'typo3' => '6.2.0-8.99.99',
-        ),
-        'conflicts' => array(),
-        'suggests' => array(),
-    ),
-    'autoload' => array(
-        'psr-4' => array(
-            'Keizer\\KoningInstagram\\' => 'Classes'
-        )
-    ),
-);
+        ],
+        'conflicts' => [],
+        'suggests' => [],
+    ],
+    'autoload' => [
+        'psr-4' => [
+            'KoninklijkeCollective\\KoningInstagram\\' => 'Classes'
+        ]
+    ],
+];

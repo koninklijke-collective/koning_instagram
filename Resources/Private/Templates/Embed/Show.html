@@ -1,0 +1,12 @@
+<f:layout name="Default"/>
+
+<f:section name="Content">
+    <f:if condition="{code}">
+        <f:then>
+            {code -> f:format.raw()}
+        </f:then>
+        <f:else>
+            <f:translate id="post_not_found" />
+        </f:else>
+    </f:if>
+</f:section>

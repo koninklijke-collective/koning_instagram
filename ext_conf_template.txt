@@ -1,8 +1,0 @@
-# cat=basic/enable; type=string; label=Base URL for Instagram API
-instagram.baseUrl = https://api.instagram.com/
-# cat=basic/enable; type=string; label=Instagram API: Client ID
-instagram.clientId =
-# cat=basic/enable; type=string; label=Instagram API: Client Secret
-instagram.clientSecret =
-# cat=basic/enable; type=string; label=Instagram API: Redirect url for handling authentication; Normally: domain/index.php?type=
-instagram.redirectUri =
