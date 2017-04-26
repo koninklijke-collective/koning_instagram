@@ -2,6 +2,11 @@
 
 <f:section name="Content">
     <f:if condition="{code}">
-        {code -> f:format.raw()}
+        <f:then>
+            {code -> f:format.raw()}
+        </f:then>
+        <f:else>
+            <f:translate id="post_not_found" />
+        </f:else>
     </f:if>
 </f:section>
