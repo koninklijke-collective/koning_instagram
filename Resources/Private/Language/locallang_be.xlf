@@ -3,41 +3,24 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2016-02-20T19:30:32Z" product-name="koning_instagram">
         <header/>
         <body>
-            <trans-unit id="plugin.show">
-                <source>Instagram - Content by tag</source>
-            </trans-unit>
-            <trans-unit id="plugin.user">
-                <source>Instagram - Content by user</source>
+            <trans-unit id="plugin.embed">
+                <source>Embed Instagram post</source>
             </trans-unit>
 
-            <trans-unit id="tx_koninginstagram_domain_model_credential.singular">
-                <source>Instagram API credential</source>
+            <trans-unit id="configuration.url">
+                <source>Post link (like https://www.instagram.com/p/fA9uwTtkSN/)</source>
             </trans-unit>
-            <trans-unit id="tx_koninginstagram_domain_model_credential.plural">
-                <source>Instagram API credentials</source>
+            <trans-unit id="configuration.max_width">
+                <source>Max width of returned media (must be greater than 320)</source>
             </trans-unit>
-            <trans-unit id="tx_koninginstagram_domain_model_credential.user_id">
-                <source>User ID</source>
+            <trans-unit id="configuration.hide_caption">
+                <source>Hide caption</source>
             </trans-unit>
-            <trans-unit id="tx_koninginstagram_domain_model_credential.username">
-                <source>Username</source>
+            <trans-unit id="configuration.omit_script">
+                <source>Do not include script tag (must include manually)</source>
             </trans-unit>
-            <trans-unit id="tx_koninginstagram_domain_model_credential.access_token">
-                <source>Access token</source>
-            </trans-unit>
-
-            <trans-unit id="configuration.credential">
-                <source>Credential</source>
-            </trans-unit>
-            <trans-unit id="configuration.credential.select">
-                <source>- Create and select the credential -</source>
-            </trans-unit>
-            <trans-unit id="configuration.limit">
-                <source>Limit</source>
-            </trans-unit>
-
-            <trans-unit id="configuration.show.tags">
-                <source>Tags (without the #)</source>
+            <trans-unit id="configuration.json_callback">
+                <source>JSON callback to be invoked (optional)</source>
             </trans-unit>
         </body>
     </file>

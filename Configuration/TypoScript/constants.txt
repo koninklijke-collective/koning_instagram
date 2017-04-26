@@ -1,0 +1,7 @@
+plugin.tx_koninginstagram {
+    view {
+        templateRootPath = EXT:koning_instagram/Resources/Private/Templates
+        partialRootPath = EXT:koning_instagram/Resources/Private/Partials
+        layoutRootPath = EXT:koning_instagram/Resources/Private/Layouts
+    }
+}
