@@ -1,4 +1,4 @@
-# koning_instagram
+# [OBSOLETE] koning_instagram
 
 This extension provides functionality to embed an Instagram post with a TYPO3 plugin. It makes use of the ``/oembed`` API call as documented [here](https://www.instagram.com/developer/embedding/).
 

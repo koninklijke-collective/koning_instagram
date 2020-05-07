@@ -1,4 +1,5 @@
 {
+    "abandoned": true,
     "name": "koninklijke-collective/koning-instagram",
     "description": "TYPO3 Extension: Embed Instagram posts",
     "type": "typo3-cms-extension",
@@ -18,8 +19,13 @@
         }
     },
 
-    "version": "2.0.0",
+    "require": {
+        "typo3/cms-core": ">=6.2.6"
+    },
 
+    "replace": {
+        "typo3-ter/koning-instagram": "self.version"
+    },
     "authors": [
         {
             "name": "Jesper Paardekooper",
